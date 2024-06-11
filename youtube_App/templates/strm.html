@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+        <table>
+            {% for i in v%}
+            
+            <tr>
+             {%for j in i %}
+             <td style="color: blue;">
+                {{j}}
+               
+             </td>
+             
+             {%endfor%}
+             
+            </tr>
+            {%endfor%}
+        </table>
+        
+    
+        <form method="post" action="/dwn/{{fr}}">
+            {%csrf_token%}
+			<input type="number" id="video-url" class="input-field" placeholder="Enter video URL" name="stm">
+			
+			<button class="button" id="download-button">Download Video</button>
+		</form>
+        
+        
+    </div>
+</body>
+</html>
